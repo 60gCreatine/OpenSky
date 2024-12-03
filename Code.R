@@ -22,5 +22,7 @@ response <- GET(url, query = bermuda_triangle_bbox, authenticate(username, passw
 data <- fromJSON(content(response, as = "text"), flatten = T)
 
 df <- as.data.frame(data$states)
-
+nrow <- nrow(df)
+output <- paste0("Der er: ",nrow, " fly over Bermudatrekanten lige nu!!!!!!!!!!!")
+cat(output)
   
